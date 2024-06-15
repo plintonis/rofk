@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЧВК "Race of Killers"</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            transition: background-color 0.3s ease; /* плавное переключение фона */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* выравнивание элементов по правому краю */
+        }
+
+        body.dark-mode {
+            background-color: #333; /* тёмно-серый фон для темной темы */
+            color: white;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            width: 100%; /* расширение шапки на всю ширину */
+            box-sizing: border-box; /* учитываем padding в ширине */
+        }
+
+        main {
+            padding: 2rem;
+            width: 100%; /* контент на всю ширину */
+            box-sizing: border-box; /* учитываем padding в ширине */
+        }
+
+        section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .mercenary {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem; /* увеличенное расстояние между наемниками */
+        }
+
+        .mercenary img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 2rem;
+        }
+
+        .mercenary-details {
+            max-width: 600px;
+        }
+
+        .mercenary-details h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mercenary-details p {
+            margin: 0.5rem 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            width: 100%; /* расширение подвала на всю ширину */
+            box-sizing: border-box; /* учитываем padding в ширине */
+            position: fixed;
+            bottom: 0;
+        }
+
+        /* Стили для темной темы */
+        body.dark-mode {
+            background-color: #333; /* тёмно-серый фон для темной темы */
+            color: white;
+        }
+
+        body.dark-mode header {
+            background-color: #222;
+        }
+
+        body.dark-mode section {
+            background-color: #444; /* тёмно-серый фон для секций */
+        }
+
+        body.dark-mode .mercenary-details {
+            color: white;
+        }
+
+        body.dark-mode footer {
+            background-color: #222;
+        }
+
+        /* Стили для переключателя тем */
+        .theme-toggle {
+            position: absolute;
+            top: 1rem;
+            right: 1rem; /* расположение переключателя справа */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .theme-toggle input {
+            display: none; /* скрытие оригинального чекбокса */
+        }
+
+        .theme-toggle .toggle-label {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%; /* круглая форма */
+            background-color: #ddd; /* цвет фона переключателя */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        .theme-toggle .toggle-label::after {
+            content: 'Тёмная тема'; /* текст под переключателем */
+            font-size: 12px;
+            margin-top: 4px;
+            text-align: center;
+        }
+
+        .theme-toggle input:checked + .toggle-label {
+            background-color: #555; /* цвет фона при активной темной теме */
+            color: white;
+        }
+
+        /* Стили для картинки под списком наёмников */
+        .additional-info {
+            display: flex;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .additional-info img {
+            width: 150px;
+            height: auto;
+            margin-right: 1rem;
+        }
+
+        .additional-info p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Переключатель тем -->
+    <div class="theme-toggle">
+        <input type="checkbox" id="theme-toggle">
+        <label class="toggle-label" for="theme-toggle"></label>
+    </div>
+
+    <!-- Шапка сайта -->
+    <header>
+        <h1>ЧВК "Race of Killers"</h1>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        <section>
+            <h2>Наши наемники</h2>
+            <!-- Наемник 1 -->
+            <div class="mercenary">
+                <img src="https://i.ibb.co/2Sss1Ky/Screenshot-1.png" alt="Наемник 1">
+                <div class="mercenary-details">
+                    <h3>Vikaso</h3>
+                    <p><strong>Биография:</strong> (нет информации)</p>
+                </div>
+            </div>
+
+            <!-- Наемник 2 -->
+            <div class="mercenary">
+                <img src="https://i.ibb.co/rmn8D2b/Screenshot-2.png" alt="Наемник 2">
+                <div class="mercenary-details">
+                    <h3>Horyok</h3>
+                    <p><strong>Биография:</strong></p>
+                    <ul>
+                        <li><strong>Цель:</strong> нету</li>
+                        <li><strong>Характер:</strong> спокойный</li>
+                        <li><strong>Профессия:</strong> разведчик-диверсант</li>
+                        <li><strong>Женат:</strong> нет</li>
+                        <li><strong>Моральные принципы:</strong> минимальные</li>
+                        <li><strong>Транспорт:</strong> броневик с пулемётом</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Дополнительная информация -->
+            <div class="additional-info">
+                <img src="https://i.ibb.co/jVQpyKN/Race-of-killers-1-removebg-preview.png" alt="Дополнительная информация">
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer>
+        <p>Race of Killers</p>
+        <p>&copy; 2024 ЧВК "Race of Killers". Все права защищены.</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+
+        themeToggle.addEventListener('change', function() {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>
